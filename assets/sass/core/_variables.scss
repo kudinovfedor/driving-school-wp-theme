@@ -2,12 +2,12 @@ $debug: false !default;
 $image-url-path: "assets/img/" !default;
 $font-url-path: "assets/fonts/" !default;
 
-$borderRadius: 0px;
-$shadow: 0 0 10px rgba(#000, .2);
+$borderRadius: 0;
+$shadow: none;
 
 // BRAND
-$themeColorOne: #2c3e50; //
-$themeColorTwo: #e74c3c; //
+$themeColorOne: #242b38; //
+$themeColorTwo: #9c1c1f; //
 
 // SELECTION: цвет фона и текста при выделении его курсором
 $selectionBgColor: $themeColorTwo;
@@ -18,8 +18,8 @@ $bodyBgColor: #fff; //white
 $bodyFontColor: #000; // black
 
 // HEADER: цвет фона шапки сайта
-$headerBgColor: $themeColorOne;
-$headerFontColor: #fff;
+$headerBgColor: #fff;
+$headerFontColor: #333;
 
 // Text Highlight: цвет фона и текста при добавлении к нему .highlighted
 $textHighlightBgColor: $themeColorTwo;
@@ -73,7 +73,7 @@ $linkFontColorActive: lighten($linkFontColor, 20%);
 $buttonFontColor: #fff;
 $buttonFontColorActive: #fff;
 $buttonBgColor: $themeColorTwo;
-$buttonBgColorActive: darken($buttonBgColor, 10%);
+$buttonBgColorActive: darken($buttonBgColor, 5%);
 $buttonBorderColor: $themeColorTwo;
 $buttonOutlinedFirstColor: $themeColorTwo;
 $buttonOutlinedSecondColor: #fff;

@@ -11,7 +11,7 @@ License URI:
 Version: 1.0.0
 Tags: one-column, two-columns, full-width-template, e-commerce
 */
- 
+
 // CORE
 @import "core/reset";
 @import "core/mediaqueries";
@@ -20,7 +20,7 @@ Tags: one-column, two-columns, full-width-template, e-commerce
 @import "core/fonts";
 @import "core/wp-core";
 @import "core/help-style";
-//@import "core/flexbox";
+@import "core/flexbox";
 
 // PLUG-INs
 @import "plugins/font-awesome/font-awesome";
@@ -44,8 +44,8 @@ Tags: one-column, two-columns, full-width-template, e-commerce
 @import "elements/responsive-titles";
 @import "elements/scroll-top";
 @import "elements/forms";
-//@import "elements/buttons";
-@import "elements/buttons-2";
+@import "elements/buttons";
+//@import "elements/buttons-2";
 @import "elements/links";
 @import "elements/pagination";
 @import "elements/tables";
@@ -96,7 +96,7 @@ body {
     background-color: $bodyBgColor;
     color: $bodyFontColor;
     font-family: $fontFamilyTwo;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .wrapper {
@@ -104,8 +104,8 @@ body {
     overflow-x: hidden;
     min-height: 100%;
 
-    @media #{$mobile} {
-        padding-top: 80px;
+    @media only screen and (max-width: 768px) {
+        padding-top: 60px;
     }
 }
 
@@ -143,10 +143,14 @@ img {
     @media only screen and (min-width: 1200px) {
         width: 1170px;
     }
+
+    @media only screen and (min-width: 1580px) {
+        width: 1560px;
+    }
 }
 
 .kama_breadcrumbs {
-    padding: 10px 0;
+    padding: 15px 0;
     font-size: 14px;
     margin-bottom: 10px;
 }
@@ -168,5 +172,133 @@ img {
     //sm 545 - 768
     @media #{$tablet} {
         background: none;
+    }
+}
+
+@media only screen and (max-width: 1580px) {
+    .header {
+        &-nav,
+        &-lang {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        &-nav {
+        }
+    }
+
+    .nav {
+        .menu {
+            &-item {
+                margin-right: 30px;
+            }
+
+            &-link {
+                font-size: 16px;
+                padding: 10px 0;
+            }
+        }
+    }
+
+    .phone-number {
+        font-size: 16px;
+    }
+
+    .footer {
+        &-main {
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 30px 0;
+        }
+
+        &-bottom {
+            font-size: 14px;
+            padding: 20px 0;
+        }
+
+        p,
+        &-nav a {
+            font-size: 16px;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+
+            &-img {
+                max-height: 50px;
+            }
+        }
+
+        .social {
+            margin-top: 15px;
+
+            &-link {
+                width: 46px;
+                height: 43px;
+                font-size: 20px;
+                line-height: 43px;
+            }
+        }
+    }
+
+    .work-schedule {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        padding: 5px 0 10px;
+
+        .logo {
+            display: none;
+        }
+
+        &-nav,
+        &-lang {
+            margin-top: 0;
+        }
+
+        [class^="col-"] {
+            text-align: center;
+
+            + [class^="col-"] {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .footer {
+        &-main {
+            padding: 15px 0;
+
+            [class^="col-"] {
+                text-align: center;
+
+                + [class^="col-"] {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        &-bottom {
+            padding: 15px 0;
+
+            [class^="col-"] {
+                text-align: center;
+            }
+        }
+
+        &-nav {
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 5px 5px;
+            }
+        }
+
+        .logo {
+            margin-bottom: 10px;
+        }
     }
 }

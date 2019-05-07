@@ -3,25 +3,100 @@
     right: 0;
     bottom: 0;
     left: 0;
+
+    &-main {
+        font-size: 20px;
+        line-height: 2;
+        padding: 60px 0;
+        border-top: 1px solid #ac4043;
+        color: #fff;
+        background-color: $themeColorTwo;
+    }
+
+    &-bottom {
+        padding: 38px 0;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: $footerBgColor;
+        color: $footerFontColor;
+
+        a {
+            color: $footerFontColor;
+            text-decoration: underline;
+
+            &:hover {
+                color: $footerLinkColorActive;
+            }
+        }
+    }
+
+    &-nav {
+        ul {
+            @extend %reset-list;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 2px 0;
+            font-size: 20px;
+            line-height: 1.3;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            @extend %smooth_animation;
+
+            &:hover {
+                color: #fff;
+                border-bottom-color: #fff;
+            }
+        }
+    }
+
+    .logo {
+        margin-bottom: 50px;
+    }
+
+    .phone {
+        &-item {
+            margin: 0 10px 0 0;
+        }
+
+        &-number {
+            color: #fff;
+        }
+    }
+
+    .social {
+        margin-top: 20px;
+
+        &-item {
+            margin: 0 0 10px;
+
+            + .social-item {
+                margin-left: 15px;
+            }
+        }
+
+        &-link {
+            width: 65px;
+            height: 63px;
+            font-size: 30px;
+            line-height: 63px;
+        }
+    }
+}
+
+.work-schedule {
+    opacity: .4;
+    margin-top: 5px;
+    margin-bottom: 30px;
 }
 
 .pre-footer {
     padding: 20px 0;
     background-color: lighten($footerBgColor, 10%);
-}
-
-.copyright {
-    padding: 14px 0;
-    background-color: $footerBgColor;
-    text-align: center;
-    color: $footerFontColor;
-
-    a {
-        color: $footerFontColor;
-        text-decoration: underline;
-
-        &:hover {
-            color: $footerLinkColorActive;
-        }
-    }
 }

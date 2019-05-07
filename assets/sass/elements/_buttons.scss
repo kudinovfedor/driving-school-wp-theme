@@ -57,6 +57,18 @@ button {
     }
 }
 
+.button-outline {
+    color: $buttonFontColor;
+    border: 1px solid $buttonFontColor;
+    background-color: transparent;
+
+    &:hover {
+        color: $buttonBgColor;
+        border: 1px solid $buttonFontColor;
+        background-color: $buttonFontColor;
+    }
+}
+
 .button-block {
     display: block;
     width: 100%;
