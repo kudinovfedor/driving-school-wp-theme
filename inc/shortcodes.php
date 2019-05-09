@@ -462,7 +462,6 @@ if (!function_exists('bw_custom_register_shortcode')) {
     add_shortcode('bw-custom-register', 'bw_custom_register_shortcode');
 }
 
-
 if (!function_exists('bw_custom_auth_shortcode')) {
     function bw_custom_auth_shortcode($atts)
     {
@@ -592,6 +591,8 @@ if (!function_exists('bw_reviews_shortcode')) {
             wp_reset_postdata();
 
             $output .= '</div>';
+
+            $output .= '<div class="text-center"><a class="button-medium" href="' . get_post_type_archive_link('reviews') . '">' . __('All reviews', 'brainworks') . '</a></div>';
         }
 
         return $output;
