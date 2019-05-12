@@ -240,6 +240,113 @@ if (!function_exists('bw_html_sitemap')) {
     add_shortcode('bw-html-sitemap', 'bw_html_sitemap');
 }
 
+if (!function_exists('fk_last_posts')) {
+	/**
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	function fk_last_posts($atts = []) {
+		$atts = shortcode_atts( [], $atts );
+
+		$output = '';
+
+		$args = [
+			'post_type'      => 'post',
+			'post_status'    => 'publish',
+			'orderby'        => 'post_date',
+			'order'          => 'DESC',
+			'posts_per_page' => 3
+		];
+
+		$query = new WP_Query( $args );
+		$count = $query->post_count;
+
+		$index = 1;
+
+		if ( $query->have_posts() ) {
+
+			$output .= '<div class="entry-list row d-flex flex-wrap">';
+				$output .= '<div class="col-xs-12 col-lg-8 d-flex">';
+
+					while ( $query->have_posts() ) {
+						$query->the_post();
+						$thumbnail  = has_post_thumbnail() ? get_the_post_thumbnail_url( null, 'medium-large' ) : 'none';
+						$bg         = $thumbnail !== 'none' ? "url('" . esc_url( $thumbnail ) . "')" : $thumbnail;
+						$post_class = 'class="' . join( ' ', get_post_class( 'entry-item entry-primary', null ) ) . '"';
+
+						if ( $index === 1 ) {
+							$output .= '<div id="post-' . get_the_ID() . '" ' . $post_class . '>';
+
+								$output .= '<div class="entry-thumbnail" style="background-image: ' . $bg . ';"></div>';
+
+								$output .= '<div class="entry-content">';
+
+									$output .= '<time class="entry-date" datetime="' . get_the_date( 'c' ) . '">' . get_the_date( 'd M Y' ) . '</time>';
+									$output .= '<h3 class="entry-title"><a href="' . get_the_permalink() . '" class="entry-link">' . get_the_title() . '</a></h3>';
+
+									if ( has_excerpt() ) {
+										$output .= '<div class="entry-excerpt">' . get_the_excerpt() . '</div>';
+									}
+
+									$output .= '<a class="entry-more" href="' . get_the_permalink() . '">' . __( 'Read', 'brainworks' ) . ' <i class="fal fa-long-arrow-right" aria-hidden="true"></i></a>';
+
+								$output .= '</div>';
+
+							$output .= '</div>';
+
+							break;
+						}
+
+					}
+
+					wp_reset_postdata();
+
+				$output .= '</div>';
+
+			$output .= '<div class="col-xs-12 col-lg-4"><div class="row">';
+
+				$index = 2;
+				while ( $query->have_posts() ) {
+					$query->the_post();
+					$thumbnail  = has_post_thumbnail() ? get_the_post_thumbnail_url( null, 'medium' ) : 'none';
+					$bg         = $thumbnail !== 'none' ? "url('" . esc_url( $thumbnail ) . "')" : $thumbnail;
+					$post_class = 'class="' . join( ' ', get_post_class( 'entry-item entry-secondary', null ) ) . '"';
+
+					if ( $index !== 0 ) {
+						$output .= '<div class="col-xs-12 col-md-6 col-lg-12">';
+
+							$output .= '<div id="post-' . get_the_ID() . '" ' . $post_class . ' style="background-image: ' . $bg . '">';
+
+								$output .= '<time class="entry-date" datetime="' . get_the_date( 'c' ) . '">' . get_the_date( 'd M Y' ) . '</time>';
+								$output .= '<h3 class="entry-title"><a href="' . get_the_permalink() . '" class="entry-link">' . get_the_title() . '</a></h3>';
+
+							$output .= '</div>';
+
+						$output .= '</div>';
+
+						if ( $count === $index ) {
+							$output .= '<div class="entry-btn col-xs-12 col-md-6 col-lg-12"><a href="' . get_post_type_archive_link( 'post' ) . '" class="button-medium ">' . __( 'All news', 'brainworks' ) . '<i class="fal fa-long-arrow-right" aria-hidden="true"></i></a></div>';
+						}
+					}
+
+					$index ++;
+
+				}
+
+				wp_reset_postdata();
+
+			$output .= '</div></div>';
+
+			$output .= '</div>';
+		}
+
+		return $output;
+	}
+
+	add_shortcode('last-posts', 'fk_last_posts');
+}
+
 if (!function_exists('bw_last_posts')) {
     /**
      *
@@ -271,7 +378,7 @@ if (!function_exists('bw_last_posts')) {
             'post_status' => 'publish'
         ), ARRAY_A);
 
-        $output = '<div class="container"><div class="row">';
+        $output = '<div class="row">';
 
         foreach ($posts as $key => $post) {
             $thumbnail_id = get_post_thumbnail_id($post['ID']);
@@ -299,7 +406,7 @@ if (!function_exists('bw_last_posts')) {
             $output .= '</div></div>';
         }
 
-        $output .= '</div></div>';
+        $output .= '</div>';
 
         return $output;
 
@@ -521,6 +628,7 @@ if (!function_exists('bw_reviews_shortcode')) {
 
         if ($query->have_posts()) {
 
+            $output .= '<div class="review-container">';
             $output .= '<div class="review-slider text-center js-reviews">';
 
             while ($query->have_posts()) {
@@ -592,7 +700,9 @@ if (!function_exists('bw_reviews_shortcode')) {
 
             $output .= '</div>';
 
-            $output .= '<div class="text-center"><a class="button-medium" href="' . get_post_type_archive_link('reviews') . '">' . __('All reviews', 'brainworks') . '</a></div>';
+            $output .= '<div class="text-center"><a class="button-medium" href="' . get_post_type_archive_link('reviews') . '">' . __('All reviews', 'brainworks') . ' <i class="fal fa-long-arrow-right" aria-hidden="true"></i></a></div>';
+
+	        $output .= '</div>';
         }
 
         return $output;

@@ -1,11 +1,11 @@
 $review-title-color: #333 !default;
 $review-title-font-size: 16px !default;
-$review-title-font-weight: normal !default;
+$review-title-font-weight: bold !default;
 $review-title-text-transform: none !default;
 
 $review-client-size: 100px !default;
 
-$review-content-color: #000 !default;
+$review-content-color: #333 !default;
 $review-content-font-size: 16px !default;
 
 $review-social-size: 25px !default;
@@ -14,21 +14,41 @@ $review-social-background: #333 !default;
 $review-social-hover-color: #fff !default;
 $review-social-hover-background: #2c3e50 !default;
 
-$review-arrow-size: 32px !default;
-$review-arrow-color: #333 !default;
+$review-arrow-size: 59px !default;
+$review-arrow-color: #fff !default;
 $review-arrow-font-size: 24px !default;
-$review-arrow-font-weight: bold !default;
-$review-arrow-background: transparent !default;
+$review-arrow-font-weight: 400 !default;
+$review-arrow-background: #ae1f23 !default;
 $review-arrow-border-width: 1px !default;
-$review-arrow-border-color: #333 !default;
-$review-arrow-radius: 50% !default;
+$review-arrow-border-color: #ae1f23 !default;
+$review-arrow-radius: 0 !default;
 $review-arrow-hover-color: #fff !default;
-$review-arrow-hover-border-color: #2c3e50 !default;
-$review-arrow-hover-background: #2c3e50 !default;
+$review-arrow-hover-border-color: lighten($review-arrow-border-color, 5%) !default;
+$review-arrow-hover-background: lighten($review-arrow-background, 5%) !default;
 $review-prev: '\00ab'; // &laquo;
 $review-next: '\00bb'; // &raquo;
 
 .review {
+    &-container {
+        padding-top: 60px;
+        padding-bottom: 30px;
+        background-color: #9c1c1f;
+
+        .review-title {
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .button-medium {
+            font-size: 20px;
+        }
+
+        .review-title,
+        .review-content {
+            color: #fff;
+        }
+    }
+
     &-list {
 
     }
@@ -56,26 +76,30 @@ $review-next: '\00bb'; // &raquo;
     }
 
     &-social {
+        @extend .social-link;
+        width: 40px !important;
+        height: 38px !important;
+
         cursor: pointer;
         position: absolute;
         right: 10px;
-        bottom: 0;
-        display: inline-block;
-        vertical-align: middle;
-        width: $review-social-size;
-        height: $review-social-size;
-        font-size: 14px;
-        line-height: $review-social-size;
-        border-radius: 50%;
-        color: $review-social-color;
-        background-color: $review-social-background;
-        @extend %smooth_animation;
-
-        &:hover,
-        &:active {
-            color: $review-social-hover-color;
-            background-color: $review-social-hover-background;
-        }
+        bottom: -4px;
+        //display: inline-block;
+        //vertical-align: middle;
+        //width: $review-social-size;
+        //height: $review-social-size;
+        //font-size: 14px;
+        //line-height: $review-social-size;
+        //border-radius: 50%;
+        //color: $review-social-color;
+        //background-color: $review-social-background;
+        //@extend %smooth_animation;
+        //
+        //&:hover,
+        //&:active {
+        //    color: $review-social-hover-color;
+        //    background-color: $review-social-hover-background;
+        //}
     }
 
     &-author,
@@ -179,8 +203,22 @@ $review-next: '\00bb'; // &raquo;
             }
         }
 
+        &-container {
+            padding: 20px 0;
+
+            .review-title {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .review-item {
+                margin-bottom: 0;
+            }
+
+        }
+
         &-slider {
-            padding: 0;
+            padding: 0 15px;
 
             .slick {
                 &-list {
@@ -188,6 +226,8 @@ $review-next: '\00bb'; // &raquo;
                 }
 
                 &-arrow {
+                    width: 40px;
+                    height: 40px;
                     top: ($review-client-size - $review-arrow-size) / 2;
                     margin-top: 0;
                 }
