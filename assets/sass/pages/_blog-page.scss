@@ -56,8 +56,9 @@
     }
 
     &-item {
+        width: 100%;
         position: relative;
-        margin-bottom: 15px;
+        margin-bottom: 15px !important;
     }
 
     &-primary {
@@ -168,7 +169,7 @@
     }
 
     &-btn {
-        margin-bottom: 15px;
+        margin-bottom: 15px !important;
 
         a {
             display: block;
@@ -186,7 +187,7 @@
         &-primary {
             .entry-date,
             .entry-title,
-            .entry-excerpt{
+            .entry-excerpt {
                 margin-bottom: 15px;
             }
         }
