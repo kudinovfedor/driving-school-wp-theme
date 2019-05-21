@@ -146,7 +146,12 @@ em {
         display: block !important;
     }
     
-    .center-on-mobile {
+    .center-text-mobile {
         text-align: center !important;
+    }
+
+    .center-block-mobile {
+        display: block;
+        margin: 0 auto;
     }
 }
