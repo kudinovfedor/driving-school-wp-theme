@@ -533,3 +533,33 @@ if (!function_exists("the_auth_button")) {
         echo sprintf('<a href="%s" class="button-medium">%s</a>', $link, $text);
     }
 }
+
+if (!function_exists('e_get_option')) {
+    /**
+     * Displays an option value based on an option name
+     *
+     * @see get_option()
+     *
+     * @param string $option Name of option to retrieve. Expected to not be SQL-escaped.
+     * @param mixed $default Optional. Default value to return if the option does not exist.
+     *
+     * @return void
+     */
+    function e_get_option($option, $default = false)
+    {
+        echo get_option($option, $default);
+    }
+}
+
+if (!function_exists('e_post_meta')) {
+    /**
+     * Retrieves a post meta field for the given post ID.
+     *
+     * @param string $metaKey Optional. The meta key to retrieve.
+     * @return void Will be value of the meta field if $single is true. Will be an array if $single is false.
+     */
+    function e_post_meta($metaKey)
+    {
+        echo get_metadata('post', get_the_ID(), $metaKey, true);
+    }
+}

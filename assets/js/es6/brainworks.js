@@ -53,9 +53,15 @@
      */
     const stickFooter = (footer, container) => {
         const el = $(footer);
-        const height = (el.outerHeight() + 20) + 'px';
+        let height = (el.outerHeight()) + 'px';
 
         $(container).css('paddingBottom', height);
+
+        $(window).on('resize', () => {
+            height = (el.outerHeight()) + 'px';
+
+            $(container).css('paddingBottom', height);
+        });
     };
 
     /**

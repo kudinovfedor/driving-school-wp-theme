@@ -1,0 +1,158 @@
+.hero {
+    padding: 75px 15px;
+    margin-bottom: 100px;
+    background-color: #f3f5f9;
+
+    &-headline {
+        margin-bottom: 0;
+        font-size: 60px;
+        font-weight: 800;
+        line-height: 1.15;
+        text-align: center;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            margin: 0 auto 15px;
+            background-color: #9c1c1f;
+        }
+    }
+}
+
+.instructor {
+    &-list {
+        margin-bottom: 30px;
+    }
+
+    &-item {
+        margin-bottom: 30px;
+    }
+
+    &-inner {
+        width: 100%;
+        color: #333;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.5;
+        background-color: #f3f5f9;
+        box-shadow: 0 15px 49px rgba(#8292b1, .27);
+    }
+
+    &-thumbnail {
+        cursor: pointer;
+        display: block;
+        height: 250px;
+        background: #e7e9ed none no-repeat center center;
+        background-size: cover;
+    }
+
+    &-content {
+        padding: 35px 30px;
+    }
+
+    &-opt {
+        position: relative;
+        padding-left: 45px;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+
+        .svg-icon {
+            position: absolute;
+            top: -4px;
+            left: 0;
+        }
+
+        &-name {
+            text-transform: uppercase;
+        }
+
+        &-value {
+            font-size: 23px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .instructor {
+        &-opt {
+            &-value {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .hero {
+        padding: 50px 15px;
+        margin-bottom: 50px;
+
+        &-headline {
+            font-size: 50px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero {
+        padding: 40px 15px;
+        margin-bottom: 25px;
+
+        &-headline {
+            font-size: 40px;
+        }
+    }
+
+    .instructor {
+        &-item {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &-thumbnail {
+            height: 200px;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .hero {
+        padding: 25px 15px;
+
+        &-headline {
+            font-size: 28px;
+
+            &::before {
+                height: 3px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .instructor {
+        &-content {
+            padding: 20px 15px 10px;
+        }
+
+        &-opt {
+            padding-left: 30px;
+
+            .svg-icon {
+                width: 20px;
+                height: 20px;
+                top: 0;
+            }
+
+            &-value {
+                font-size: 16px;
+            }
+        }
+    }
+}

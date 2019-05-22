@@ -34,6 +34,10 @@
         var el = $(footer);
         var height = el.outerHeight() + "px";
         $(container).css("paddingBottom", height);
+        $(window).on("resize", function() {
+            height = el.outerHeight() + "px";
+            $(container).css("paddingBottom", height);
+        });
     };
     var reviews = function reviews(container) {
         var element = $(container);

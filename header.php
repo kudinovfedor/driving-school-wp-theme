@@ -99,6 +99,12 @@
         </div>
     </header>
 
+    <?php if (is_post_type_archive('instructors')) { ?>
+        <div class="hero">
+            <h1 class="hero-headline"><?php post_type_archive_title() ?></h1>
+        </div>
+    <?php } ?>
+
     <div class="container js-container">
 
         <div class="nav-mobile-header">
