@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
 <?php /*
-
-
 <div class="hero">
     <h1 class="hero-headline"><?php post_type_archive_title() ?></h1>
 </div>
@@ -30,7 +28,9 @@
                         <div class="instructor-opt">
                             <svg class="svg-icon" width="24" height="25"><use xlink:href="#user"></use></svg>
                             <div class="instructor-opt-name"><?php _ex('Instructor name', 'instructor', 'brainworks') ?></div>
-                            <div class="instructor-opt-value"><?php the_title() ?></div>
+                            <div class="instructor-opt-value">
+                                <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                            </div>
                         </div>
 
                         <div class="instructor-opt">
@@ -46,20 +46,6 @@
                                 <div class="instructor-opt-rating"><?php the_ratings() ?></div>
                             </div>
                         <?php } ?>
-
-                        <?php /*
-                        <div class="instructor-opt">
-                            <svg class="svg-icon" width="30" height="25"><use xlink:href="#car"></use></svg>
-                            <div class="instructor-opt-name"><?php _ex('Car brand', 'instructor', 'brainworks') ?></div>
-                            <div class="instructor-opt-value"><?php e_post_meta('instructor_car_brand') ?></div>
-                        </div>
-
-                        <div class="instructor-opt">
-                            <svg class="svg-icon" width="30" height="22"><use xlink:href="#experience"></use></svg>
-                            <div class="instructor-opt-name"><?php _ex('Experience', 'instructor', 'brainworks') ?></div>
-                            <div class="instructor-opt-value"><?php e_post_meta('instructor_experience') ?></div>
-                        </div>
-                        */ ?>
 
                     </div>
 

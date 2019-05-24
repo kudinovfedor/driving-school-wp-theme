@@ -58,6 +58,7 @@
 
             &-has-children {
                 position: relative;
+                padding-right: 15px;
                 
                 &:hover {
                     &::after {
@@ -68,10 +69,14 @@
                 &::after {
                     content: "";
                     position: absolute;
-                    top: 21px;
+                    top: 27px;
                     right: 1px;
                     border: 5px solid #000;
                     border-color: #000 transparent transparent transparent;
+                    
+                    @media only screen and (max-width: 1579px) {
+                        top: 17px;
+                    }
                 }
             }
 

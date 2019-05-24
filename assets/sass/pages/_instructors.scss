@@ -1,6 +1,22 @@
+.post-ratings {
+    &-image {
+    }
+
+    img {
+        margin-right: 3px;
+
+        + br {
+            display: none;
+        }
+    }
+
+    &-text {
+        margin-left: 5px;
+    }
+}
+
 .hero {
     padding: 75px 15px;
-    margin-bottom: 100px;
     background-color: #f3f5f9;
 
     &-headline {
@@ -23,7 +39,7 @@
 
 .instructor {
     &-list {
-        margin-bottom: 30px;
+        padding: 100px 0;
     }
 
     &-item {
@@ -36,12 +52,11 @@
         font-size: 14px;
         font-weight: 300;
         line-height: 1.5;
-        background-color: #f3f5f9;
+        background-color: #fff;
         box-shadow: 0 15px 49px rgba(#8292b1, .27);
     }
 
     &-thumbnail {
-        cursor: pointer;
         display: block;
         height: 250px;
         background: #e7e9ed none no-repeat center center;
@@ -74,6 +89,55 @@
             font-size: 23px;
             font-weight: 800;
             line-height: 1.2;
+
+            a {
+                color: #333;
+                @extend %smooth_animation;
+
+                &:hover {
+                    color: #9c1c1f;
+                }
+            }
+        }
+    }
+
+    &-single {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        .instructor-inner {
+            box-shadow: none;
+        }
+
+        .instructor-thumbnail {
+            width: 40%;
+            min-height: 250px;
+            height: auto;
+        }
+
+        .instructor-content {
+            width: 60%;
+            padding: 50px 45px;
+        }
+    }
+
+    &-about {
+        padding: 50px;
+        background-color: #fff;
+
+        h2 {
+            color: #333;
+            font-size: 23px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        p {
+            color: #000;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: (28/16);
+            margin-bottom: 20px;
         }
     }
 }
@@ -91,10 +155,20 @@
 @media only screen and (max-width: 1023px) {
     .hero {
         padding: 50px 15px;
-        margin-bottom: 50px;
 
         &-headline {
             font-size: 50px;
+        }
+    }
+
+    .instructor {
+        &-list {
+            padding: 50px 0;
+        }
+
+        &-single {
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
     }
 }
@@ -102,7 +176,6 @@
 @media only screen and (max-width: 768px) {
     .hero {
         padding: 40px 15px;
-        margin-bottom: 25px;
 
         &-headline {
             font-size: 40px;
@@ -110,14 +183,52 @@
     }
 
     .instructor {
+        &-list {
+            padding: 25px 0;
+        }
+
         &-item {
-            &:not(:last-child) {
-                margin-bottom: 20px;
-            }
+            margin-bottom: 20px;
         }
 
         &-thumbnail {
             height: 200px;
+        }
+
+        &-single {
+            padding-top: 0;
+
+            .instructor-thumbnail,
+            .instructor-content {
+                width: 100%;
+            }
+
+            .instructor-thumbnail {
+                height: 200px;
+            }
+
+            .instructor-content {
+                padding: 25px 20px;
+            }
+
+        }
+
+        &-opt {
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+
+        &-about {
+            padding: 20px;
+
+            h2 {
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 14px;
+            }
         }
     }
 }

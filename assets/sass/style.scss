@@ -98,6 +98,10 @@ body {
     color: $bodyFontColor;
     font-family: $fontFamilyTwo;
     font-weight: 300;
+
+    &.single-instructors {
+        background-color: #f3f5f9;
+    }
 }
 
 .wrapper {
@@ -151,9 +155,16 @@ img {
 }
 
 .kama_breadcrumbs {
+    color: #000;
     padding: 15px 0;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
     margin-bottom: 10px;
+
+    .single-instructors & {
+        margin-bottom: 0;
+    }
 }
 
 .page-name {

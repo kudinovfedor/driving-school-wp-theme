@@ -123,10 +123,10 @@ q:before,
 q:after {
   content: none; }
 
-.review-slider .slick-arrow, a, .fa, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .footer-nav a, .svg-icon {
-  -webkit-transition: .2s;
-  -o-transition: .2s;
-  transition: .2s; }
+.review-slider .slick-arrow, .instructor-opt-value a, a, .fa, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .footer-nav a, .svg-icon {
+  -webkit-transition: .2s ease-in-out;
+  -o-transition: .2s ease-in-out;
+  transition: .2s ease-in-out; }
 
 .container:after {
   clear: both;
@@ -7516,9 +7516,16 @@ ol.commentlist .comment-body {
       top: 20.5px;
       margin-top: 0; } }
 
+.post-ratings img {
+  margin-right: 3px; }
+  .post-ratings img + br {
+    display: none; }
+
+.post-ratings-text {
+  margin-left: 5px; }
+
 .hero {
   padding: 75px 15px;
-  margin-bottom: 100px;
   background-color: #f3f5f9; }
   .hero-headline {
     margin-bottom: 0;
@@ -7535,7 +7542,7 @@ ol.commentlist .comment-body {
       background-color: #9c1c1f; }
 
 .instructor-list {
-  margin-bottom: 30px; }
+  padding: 100px 0; }
 
 .instructor-item {
   margin-bottom: 30px; }
@@ -7546,12 +7553,11 @@ ol.commentlist .comment-body {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
-  background-color: #f3f5f9;
+  background-color: #fff;
   -webkit-box-shadow: 0 15px 49px rgba(130, 146, 177, 0.27);
   box-shadow: 0 15px 49px rgba(130, 146, 177, 0.27); }
 
 .instructor-thumbnail {
-  cursor: pointer;
   display: block;
   height: 250px;
   background: #e7e9ed none no-repeat center center;
@@ -7575,6 +7581,39 @@ ol.commentlist .comment-body {
     font-size: 23px;
     font-weight: 800;
     line-height: 1.2; }
+    .instructor-opt-value a {
+      color: #333; }
+      .instructor-opt-value a:hover {
+        color: #9c1c1f; }
+
+.instructor-single {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  .instructor-single .instructor-inner {
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .instructor-single .instructor-thumbnail {
+    width: 40%;
+    min-height: 250px;
+    height: auto; }
+  .instructor-single .instructor-content {
+    width: 60%;
+    padding: 50px 45px; }
+
+.instructor-about {
+  padding: 50px;
+  background-color: #fff; }
+  .instructor-about h2 {
+    color: #333;
+    font-size: 23px;
+    line-height: 1.2;
+    margin-bottom: 25px; }
+  .instructor-about p {
+    color: #000;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 20px; }
 
 @media only screen and (max-width: 1440px) {
   .instructor-opt-value {
@@ -7582,21 +7621,43 @@ ol.commentlist .comment-body {
 
 @media only screen and (max-width: 1023px) {
   .hero {
-    padding: 50px 15px;
-    margin-bottom: 50px; }
+    padding: 50px 15px; }
     .hero-headline {
-      font-size: 50px; } }
+      font-size: 50px; }
+  .instructor-list {
+    padding: 50px 0; }
+  .instructor-single {
+    padding-top: 20px;
+    padding-bottom: 20px; } }
 
 @media only screen and (max-width: 768px) {
   .hero {
-    padding: 40px 15px;
-    margin-bottom: 25px; }
+    padding: 40px 15px; }
     .hero-headline {
       font-size: 40px; }
-  .instructor-item:not(:last-child) {
+  .instructor-list {
+    padding: 25px 0; }
+  .instructor-item {
     margin-bottom: 20px; }
   .instructor-thumbnail {
-    height: 200px; } }
+    height: 200px; }
+  .instructor-single {
+    padding-top: 0; }
+    .instructor-single .instructor-thumbnail,
+    .instructor-single .instructor-content {
+      width: 100%; }
+    .instructor-single .instructor-thumbnail {
+      height: 200px; }
+    .instructor-single .instructor-content {
+      padding: 25px 20px; }
+  .instructor-opt:not(:last-child) {
+    margin-bottom: 15px; }
+  .instructor-about {
+    padding: 20px; }
+    .instructor-about h2 {
+      margin-bottom: 15px; }
+    .instructor-about p {
+      font-size: 14px; } }
 
 @media only screen and (max-width: 480px) {
   .hero {
@@ -7895,9 +7956,9 @@ form fieldset {
     font-weight: 300;
     -webkit-box-shadow: none;
     box-shadow: none;
-    -webkit-transition: .2s;
-    -o-transition: .2s;
-    transition: .2s;
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
     margin-bottom: 0; }
     form fieldset [type="submit"].fa {
       font-family: 'Font Awesome 5 Pro'; }
@@ -7966,9 +8027,9 @@ form fieldset {
   font-weight: 300;
   -webkit-box-shadow: none;
   box-shadow: none;
-  -webkit-transition: .2s;
-  -o-transition: .2s;
-  transition: .2s; }
+  -webkit-transition: .2s ease-in-out;
+  -o-transition: .2s ease-in-out;
+  transition: .2s ease-in-out; }
   .fa.button-style, .fa.button-large, .fa.button-medium, .fa.button-small, .fa.button-inverse, .fa[type="submit"] {
     font-family: 'Font Awesome 5 Pro'; }
   .button-style:hover, .button-large:hover, .button-medium:hover, .button-small:hover, .button-inverse:hover, :hover[type="submit"] {
@@ -8454,14 +8515,18 @@ a:hover .fa {
         -ms-transform: rotate(-45deg);
         transform: rotate(-45deg); }
     .nav .menu-item-has-children {
-      position: relative; }
+      position: relative;
+      padding-right: 15px; }
       .nav .menu-item-has-children::after {
         content: "";
         position: absolute;
-        top: 21px;
+        top: 27px;
         right: 1px;
         border: 5px solid #000;
         border-color: #000 transparent transparent transparent; }
+        @media only screen and (max-width: 1579px) {
+          .nav .menu-item-has-children::after {
+            top: 17px; } }
     .no-touch .nav .menu-item:hover .menu-link, .nav .menu-item-current .menu-link, .nav .menu-item.current-menu-parent .menu-link, .nav .menu-item.current-menu-ancestor .menu-link {
       text-decoration: none;
       border-bottom-color: #9c1c1f; }
@@ -8875,6 +8940,8 @@ body {
   color: #000;
   font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
   font-weight: 300; }
+  body.single-instructors {
+    background-color: #f3f5f9; }
 
 .wrapper {
   position: relative;
@@ -8916,9 +8983,14 @@ img {
       width: 1560px; } }
 
 .kama_breadcrumbs {
+  color: #000;
   padding: 15px 0;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
   margin-bottom: 10px; }
+  .single-instructors .kama_breadcrumbs {
+    margin-bottom: 0; }
 
 .page-name {
   text-align: center;

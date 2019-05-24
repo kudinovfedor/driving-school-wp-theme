@@ -33,7 +33,7 @@
 
 // MIXINS
 @mixin smooth_animation {
-    transition: .2s;
+    transition: .2s ease-in-out;
 }
 
 @mixin button-style {
