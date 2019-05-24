@@ -62,7 +62,7 @@
             </div>
 
             <div class="instructor-item instructor-about">
-                <h2><?php _ex('About myself', 'instructor', 'frainworks') ?></h2>
+                <h2><?php _ex('About myself', 'instructor', 'brainworks') ?></h2>
                 <?php the_content() ?>
             </div>
 
