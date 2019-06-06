@@ -77,6 +77,8 @@
 
             &-item {
                 display: block;
+                margin: 0 !important;
+                padding: 0 !important;
 
                 &-has-children {
                     padding-right: 5px;
@@ -140,6 +142,7 @@
             opacity: 1;
             box-shadow: none;
             transition: none;
+            text-align: center;
 
             &-item {
                 &::after {

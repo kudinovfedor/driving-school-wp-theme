@@ -10181,22 +10181,22 @@ h6 {
 
   h1 {
     font-size: 38px;
-    font-size: calc(0.0225 * 100vw + 19.2px);
+    font-size: calc(0.0125 * 100vw + 24px);
   }
 
   .h1 {
     font-size: 38px;
-    font-size: calc(0.0225 * 100vw + 19.2px);
+    font-size: calc(0.0125 * 100vw + 24px);
   }
 
   h2 {
     font-size: 36px;
-    font-size: calc(0.01825 * 100vw + 18.24px);
+    font-size: calc(0.01225 * 100vw + 21.12px);
   }
 
   .h2 {
     font-size: 36px;
-    font-size: calc(0.01825 * 100vw + 18.24px);
+    font-size: calc(0.01225 * 100vw + 21.12px);
   }
 
   h3 {
@@ -10249,19 +10249,19 @@ h6 {
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   .h1 {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   h2 {
-    font-size: 42px;
+    font-size: 37px;
   }
 
   .h2 {
-    font-size: 42px;
+    font-size: 37px;
   }
 
   h3 {
@@ -10951,6 +10951,10 @@ a:hover .fa {
   color: #fff;
 }
 
+.fa-arrow-right.blog {
+  color: white;
+}
+
 @media only screen and (min-width: 480px) {
   ::-webkit-scrollbar {
     width: 7px;
@@ -11377,6 +11381,8 @@ a:hover .fa {
   }
   .nav .menu-item {
     display: block;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   .nav .menu-item-has-children {
     padding-right: 5px;
@@ -11428,6 +11434,7 @@ a:hover .fa {
             box-shadow: none;
     -webkit-transition: none;
     transition: none;
+    text-align: center;
   }
   .nav .sub-menu-item::after {
     display: none;

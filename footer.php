@@ -57,7 +57,7 @@
 	                if ( ! empty( $address ) ) {
 		                _e( 'Address', 'brainworks' );
 		                echo ':<br>';
-		                echo esc_html( $address );
+		                echo ( $address );
 	                } ?>
                 </div>
                 <div class="col-xs-12 col-md-3">

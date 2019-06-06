@@ -18,22 +18,22 @@ $headers-map: (
     ),
     h1: (
             fons-size-min: 30px,
-            font-size-max: $basic-font-size * 3,
+            font-size-max: $basic-font-size * 2.5,
             font-size-fallback: 38px
     ),
     '.h1': (
             fons-size-min: 30px,
-            font-size-max: $basic-font-size * 3,
+            font-size-max: $basic-font-size * 2.5,
             font-size-fallback: 38px
     ),
     h2: (
             fons-size-min: 27px,
-            font-size-max: $basic-font-size * 2.6,
+            font-size-max: $basic-font-size * 2.3,
             font-size-fallback: 36px
     ),
     '.h2': (
             fons-size-min: 27px,
-            font-size-max: $basic-font-size * 2.6,
+            font-size-max: $basic-font-size * 2.3,
             font-size-fallback: 36px
     ),
     h3: (
