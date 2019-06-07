@@ -7,7 +7,7 @@ Author URI: https://brainworks.com.ua
 Description:
 License:
 License URI:
-Version: 6.06.19
+Version: 7.06.19
 Tags: one-column, two-columns, full-width-template, e-commerce
 */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,700,900&amp;subset=cyrillic");
@@ -10025,6 +10025,10 @@ h1.hero-title {
 
 i.button-style {
   padding: 3px 8px;
+}
+
+span {
+  font-weight: 400;
 }
 
 @media (max-width: 544px) {
